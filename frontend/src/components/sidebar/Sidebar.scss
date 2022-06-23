@@ -1,0 +1,54 @@
+@import "../../styles/color.scss";
+
+$sidebar-width: 25rem;
+$sidebar-icon-width: 3rem;
+
+.sidebar {
+  font-size: 1.4rem;
+  max-width: $sidebar-width;
+  display: flex;
+  flex-direction: column;
+  background-color: $super-light-grey;
+  height: 100vh;
+  overflow-y: scroll;
+  &-header {
+    display: flex;
+    align-items: center;
+    &-logo {
+      max-width: $sidebar-icon-width;
+      margin: 0.5rem;
+    }
+    &-title {
+
+    }
+  }
+  &-links {
+    &-item {
+      display: flex;
+      align-items: center;
+    }
+  }
+  &-icon {
+    max-width: $sidebar-icon-width;
+    margin: 0.5rem;
+  }
+  &-main {
+  }
+  &-side {
+  }
+  &-footer {
+    position:fixed;
+    bottom:0;
+    left:0;
+    display: flex;
+    background-color: $light-grey;
+    width: $sidebar-width;
+    justify-content: space-between;
+    &-items {
+    }
+    &-expand {
+      &-btn {
+      }
+    }
+  }
+}
