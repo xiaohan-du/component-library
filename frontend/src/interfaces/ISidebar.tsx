@@ -1,5 +1,7 @@
 interface ISidebar {
   title: string;
+  subtitleMain: string;
+  subtitleSide: string;
   logoPath: string;
   mainLinks: { 
     id: number,

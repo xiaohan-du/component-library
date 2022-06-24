@@ -6,6 +6,8 @@ function App() {
 
   const sidebarDetails: ISidebar = {
     title: 'MySidebar',
+    subtitleMain: 'main subtitle',
+    subtitleSide: 'side subtitle',
     logoPath: require('./static/icons/home-page.png'),
     mainLinks: [
       {

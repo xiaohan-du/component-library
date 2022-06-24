@@ -6,7 +6,7 @@ interface Props {
   sidebar: ISidebar;
 }
 
-const Sidebar = ({ sidebar: { title, logoPath, mainLinks, sideLinks, footerItems } }: Props) => {
+const Sidebar = ({ sidebar: { title, subtitleMain, subtitleSide, logoPath, mainLinks, sideLinks, footerItems } }: Props) => {
   const renderLinks = (links: { id: number, name: string, url?: string, icon: string }[]): React.ReactNode => {
     return (
       links.map((l): React.ReactNode => {
@@ -31,9 +31,11 @@ const Sidebar = ({ sidebar: { title, logoPath, mainLinks, sideLinks, footerItems
           </a>
         </div>
         <div className='sidebar-main'>
+          <div className='sidebar-subtitle'>{subtitleMain.toUpperCase()}</div>
           {renderLinks(mainLinks)}
         </div>
         <div className='sidebar-side'>
+        <div className='sidebar-subtitle'>{subtitleSide.toUpperCase()}</div>
           {renderLinks(sideLinks)}
         </div>
         <div className='sidebar-footer'>
