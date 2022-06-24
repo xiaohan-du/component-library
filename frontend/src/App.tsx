@@ -177,6 +177,60 @@ function App() {
         name: 'GitHub',
         url: 'https://github.com/',
         icon: require('./static/icons/world-wide-web.png')
+      },
+      {
+        id: 14,
+        name: 'GitHub',
+        url: 'https://github.com/',
+        icon: require('./static/icons/world-wide-web.png')
+      },
+      {
+        id: 15,
+        name: 'GitHub',
+        url: 'https://github.com/',
+        icon: require('./static/icons/world-wide-web.png')
+      },
+      {
+        id: 16,
+        name: 'GitHub',
+        url: 'https://github.com/',
+        icon: require('./static/icons/world-wide-web.png')
+      },
+      {
+        id: 17,
+        name: 'GitHub',
+        url: 'https://github.com/',
+        icon: require('./static/icons/world-wide-web.png')
+      },
+      {
+        id: 18,
+        name: 'GitHub',
+        url: 'https://github.com/',
+        icon: require('./static/icons/world-wide-web.png')
+      },
+      {
+        id: 19,
+        name: 'GitHub',
+        url: 'https://github.com/',
+        icon: require('./static/icons/world-wide-web.png')
+      },
+      {
+        id: 20,
+        name: 'GitHub',
+        url: 'https://github.com/',
+        icon: require('./static/icons/world-wide-web.png')
+      },
+      {
+        id: 21,
+        name: 'GitHub',
+        url: 'https://github.com/',
+        icon: require('./static/icons/world-wide-web.png')
+      },
+      {
+        id: 22,
+        name: 'GitHub',
+        url: 'https://github.com/',
+        icon: require('./static/icons/world-wide-web.png')
       }
     ],
     footerItems: [

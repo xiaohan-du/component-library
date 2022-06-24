@@ -19,13 +19,28 @@ $sidebar-icon-width: 3rem;
       margin: 0.5rem;
     }
     &-title {
-
+      color: $dark-blue;
+      margin-left: 0.5rem;
     }
   }
   &-links {
-    &-item {
+    &-link {
       display: flex;
+      text-decoration: none;
+      width: 100%;
       align-items: center;
+      :hover {
+        text-decoration: underline;
+      }
+    }
+    &-item {
+      :hover {
+        background-color: white;
+      }
+    }
+    &-title {
+      margin-left: 0.5rem;
+      color: $dark-blue;
     }
   }
   &-icon {
@@ -33,13 +48,15 @@ $sidebar-icon-width: 3rem;
     margin: 0.5rem;
   }
   &-main {
+    margin-top: 1rem;
   }
   &-side {
+    margin-top: 1rem;
   }
   &-footer {
-    position:fixed;
-    bottom:0;
-    left:0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
     display: flex;
     background-color: $light-grey;
     width: $sidebar-width;
