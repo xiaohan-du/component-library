@@ -11,10 +11,12 @@ const Sidebar = ({ sidebar: { title, logoPath, mainLinks, sideLinks, footerItems
     return (
       links.map((l): React.ReactNode => {
         return (
-          <a className='sidebar-links-item' key={l.id} href={l.url}>
-            <img className="sidebar-icon" src={l.icon} alt="logo" />
-            {l.name}
-          </a>
+          <div className='sidebar-links-item'>
+            <a className='sidebar-links-link' key={l.id} href={l.url}>
+              <img className="sidebar-icon" src={l.icon} alt="logo" />
+              <span className='sidebar-links-title'>{l.name}</span>
+            </a>
+          </div>
         )
       })
     )
@@ -23,7 +25,7 @@ const Sidebar = ({ sidebar: { title, logoPath, mainLinks, sideLinks, footerItems
     <>
       <div className='sidebar'>
         <div className='sidebar-header'>
-          <a className='sidebar-links-item' href='/'>
+          <a className='sidebar-links-link' href='/'>
             <img className="sidebar-header-logo" src={logoPath} alt="logo" />
             <div className="sidebar-header-title">{title}</div>
           </a>
@@ -38,7 +40,11 @@ const Sidebar = ({ sidebar: { title, logoPath, mainLinks, sideLinks, footerItems
           <div className='sidebar-footer-items'>
             {renderLinks(footerItems)}
           </div>
-          <button className='btn btn-success sidebar-footer-expand-btn' type="button">Expand</button>
+          <button className='btn btn-primary-outline sidebar-footer-expand-btn' type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-bar-left" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5zM10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5z" />
+            </svg>
+          </button>
         </div>
       </div>
     </>
