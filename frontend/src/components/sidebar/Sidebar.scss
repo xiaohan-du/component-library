@@ -2,6 +2,13 @@
 
 $sidebar-width: 25rem;
 $sidebar-icon-width: 3rem;
+$sidebar-item-top-bottom-margin: 0.5rem;
+
+@mixin sidebar-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
 
 .sidebar {
   font-size: 1.4rem;
@@ -11,12 +18,12 @@ $sidebar-icon-width: 3rem;
   background-color: $super-light-grey;
   height: 100vh;
   overflow-y: scroll;
+  padding: 1rem;
   &-header {
     display: flex;
     align-items: center;
     &-logo {
       max-width: $sidebar-icon-width;
-      margin: 0.5rem;
     }
     &-title {
       color: $dark-blue;
@@ -34,8 +41,11 @@ $sidebar-icon-width: 3rem;
       }
     }
     &-item {
+      width: 100%;
+      margin-top: $sidebar-item-top-bottom-margin;
+      margin-bottom: $sidebar-item-top-bottom-margin;
       :hover {
-        background-color: white;
+        text-decoration: underline;
       }
     }
     &-title {
@@ -45,13 +55,17 @@ $sidebar-icon-width: 3rem;
   }
   &-icon {
     max-width: $sidebar-icon-width;
-    margin: 0.5rem;
   }
   &-main {
-    margin-top: 1rem;
+    @include sidebar-section;
+  }
+  &-subtitle {
+    margin-top: $sidebar-item-top-bottom-margin;
+    margin-bottom: $sidebar-item-top-bottom-margin;
+    font-weight: 500;
   }
   &-side {
-    margin-top: 1rem;
+    @include sidebar-section;
   }
   &-footer {
     position: fixed;
