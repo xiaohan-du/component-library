@@ -50,7 +50,69 @@ function App() {
         id: 7,
         name: 'YouTube',
         url: 'https://www.youtube.com/',
-        icon: require('./static/icons/world-wide-web.png')
+        icon: require('./static/icons/world-wide-web.png'),
+        sublinks: [
+          {
+            id: 1,
+            name: 'Google',
+            url: 'https://www.google.co.uk/',
+            icon: require('./static/icons/world-wide-web.png')
+          },
+          {
+            id: 2,
+            name: 'Wiki',
+            url: 'https://en.wikipedia.org/wiki/Main_Page',
+            icon: require('./static/icons/world-wide-web.png')
+          },
+          {
+            id: 3,
+            name: 'Wiki',
+            url: 'https://en.wikipedia.org/wiki/Main_Page',
+            icon: require('./static/icons/world-wide-web.png')
+          },
+          {
+            id: 4,
+            name: 'Wiki',
+            url: 'https://en.wikipedia.org/wiki/Main_Page',
+            icon: require('./static/icons/world-wide-web.png')
+          },
+          {
+            id: 5,
+            name: 'Wiki',
+            url: 'https://en.wikipedia.org/wiki/Main_Page',
+            icon: require('./static/icons/world-wide-web.png')
+          },
+          {
+            id: 6,
+            name: 'Wiki',
+            url: 'https://en.wikipedia.org/wiki/Main_Page',
+            icon: require('./static/icons/world-wide-web.png')
+          },
+          {
+            id: 7,
+            name: 'Wiki',
+            url: 'https://en.wikipedia.org/wiki/Main_Page',
+            icon: require('./static/icons/world-wide-web.png')
+          },
+          {
+            id: 8,
+            name: 'Wiki',
+            url: 'https://en.wikipedia.org/wiki/Main_Page',
+            icon: require('./static/icons/world-wide-web.png')
+          },
+          {
+            id: 9,
+            name: 'Wiki',
+            url: 'https://en.wikipedia.org/wiki/Main_Page',
+            icon: require('./static/icons/world-wide-web.png')
+          },
+          {
+            id: 10,
+            name: 'Wiki',
+            url: 'https://en.wikipedia.org/wiki/Main_Page',
+            icon: require('./static/icons/world-wide-web.png')
+          }
+        ]
       },
       {
         id: 8,
@@ -98,7 +160,21 @@ function App() {
         id: 15,
         name: 'YouTube',
         url: 'https://www.youtube.com/',
-        icon: require('./static/icons/world-wide-web.png')
+        icon: require('./static/icons/world-wide-web.png'),
+        sublinks: [
+          {
+            id: 1,
+            name: 'Google',
+            url: 'https://www.google.co.uk/',
+            icon: require('./static/icons/world-wide-web.png')
+          },
+          {
+            id: 2,
+            name: 'Wiki',
+            url: 'https://en.wikipedia.org/wiki/Main_Page',
+            icon: require('./static/icons/world-wide-web.png')
+          }
+        ]
       }
     ],
     sideLinks: [

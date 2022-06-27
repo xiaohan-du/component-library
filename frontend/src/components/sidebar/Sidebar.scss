@@ -40,17 +40,58 @@ $sidebar-item-top-bottom-margin: 0.5rem;
         text-decoration: underline;
       }
     }
+    &-dropdown {
+      justify-content: space-between;
+      padding: 0;
+      font-size: 1.4rem;
+      border: none;
+      &-menu {
+        &.show {
+          display: contents;
+        }
+      }
+      &-item {
+        margin-top: 0.5rem;
+        padding: 0.3rem;
+        border-radius: 0.5rem;
+        &-li {
+          &:first-of-type {
+            margin-top: 1rem;
+            border-top: 0.1rem black solid;
+          }
+        }
+      }
+    }
     &-item {
       width: 100%;
+      padding: 0.5rem;
       margin-top: $sidebar-item-top-bottom-margin;
       margin-bottom: $sidebar-item-top-bottom-margin;
-      :hover {
-        text-decoration: underline;
+      border-radius: 0.5rem;
+      &:hover {
+        .sidebar-links-title {
+          text-decoration: underline;
+        }
+      }
+      &-dropdown {
+        background-color: $ghost-white;
+        overflow-y: auto;
+        max-height: 20rem;
+        &:hover {
+          background-color: $light-grey;
+          .sidebar-links-title {
+            color: black;
+            text-decoration: none;
+          }
+        }
       }
     }
     &-title {
       margin-left: 0.5rem;
       color: $dark-blue;
+    }
+    &-subtitle {
+      margin-left: 0.5rem;
     }
   }
   &-icon {
