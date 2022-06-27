@@ -3,15 +3,21 @@ interface ISidebar {
   subtitleMain: string;
   subtitleSide: string;
   logoPath: string;
-  mainLinks: { 
+  mainLinks: {
     id: number,
-    name: string, 
+    name: string,
     url: string,
-    icon: string
+    icon: string,
+    sublinks?: {
+      id: number,
+      name: string,
+      url?: string,
+      icon: string
+    }[]
   }[];
-  sideLinks: { 
+  sideLinks: {
     id: number,
-    name: string, 
+    name: string,
     url: string,
     icon: string
   }[];

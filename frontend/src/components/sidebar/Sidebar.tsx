@@ -1,23 +1,61 @@
 import React from 'react';
 import ISidebar from '../../interfaces/ISidebar';
 import './Sidebar.scss';
-
 interface Props {
   sidebar: ISidebar;
 }
 
 const Sidebar = ({ sidebar: { title, subtitleMain, subtitleSide, logoPath, mainLinks, sideLinks, footerItems } }: Props) => {
-  const renderLinks = (links: { id: number, name: string, url?: string, icon: string }[]): React.ReactNode => {
+  const renderLinks = (
+    links: {
+      id: number,
+      name: string,
+      url?: string,
+      icon: string,
+      sublinks?: {
+        id: number,
+        name: string,
+        url?: string,
+        icon: string
+      }[]
+    }[]): React.ReactNode => {
     return (
       links.map((l): React.ReactNode => {
-        return (
-          <div className='sidebar-links-item'>
-            <a className='sidebar-links-link' key={l.id} href={l.url}>
-              <img className="sidebar-icon" src={l.icon} alt="logo" />
-              <span className='sidebar-links-title'>{l.name}</span>
-            </a>
-          </div>
-        )
+        if (!Array.isArray(l.sublinks) || !l.sublinks.length) {
+          return (
+            <div className='sidebar-links-item'>
+              <a className='sidebar-links-link' key={l.id} href={l.url}>
+                <img className="sidebar-icon" src={l.icon} alt="logo" />
+                <span className='sidebar-links-title'>{l.name}</span>
+              </a>
+            </div>
+          )
+        } else {
+          return (
+            <div className='sidebar-links-item sidebar-links-item-dropdown'>
+              <button className='btn dropdown-toggle sidebar-links-link sidebar-links-dropdown' data-bs-toggle="dropdown" type="button" key={l.id}>
+                <div>
+                  <img className="sidebar-icon" src={l.icon} alt="logo" />
+                  <span className='sidebar-links-title'>{l.name}</span>
+                </div>
+              </button>
+              <ul className="dropdown-menu sidebar-links-dropdown-menu">
+                {
+                  l.sublinks.map((s): React.ReactNode => {
+                    return (
+                      <li className='sidebar-links-dropdown-item-li'>
+                        <a className="dropdown-item sidebar-links-dropdown-item" href={s.url}>
+                          <img className="sidebar-icon" src={s.icon} alt="logo" />
+                          <span className='sidebar-links-subtitle'>{s.name}</span>
+                        </a>
+                      </li>
+                    )
+                  })
+                }
+              </ul>
+            </div>
+          )
+        }
       })
     )
   }
@@ -35,7 +73,7 @@ const Sidebar = ({ sidebar: { title, subtitleMain, subtitleSide, logoPath, mainL
           {renderLinks(mainLinks)}
         </div>
         <div className='sidebar-side'>
-        <div className='sidebar-subtitle'>{subtitleSide.toUpperCase()}</div>
+          <div className='sidebar-subtitle'>{subtitleSide.toUpperCase()}</div>
           {renderLinks(sideLinks)}
         </div>
         <div className='sidebar-footer'>
