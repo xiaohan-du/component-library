@@ -1,8 +1,10 @@
 @import "../../styles/color.scss";
 
 $sidebar-width: 25rem;
+$sidebar-collapsed-width: 6rem;
 $sidebar-icon-width: 3rem;
-$sidebar-item-top-bottom-margin: 0.5rem;
+$sidebar-item-margin: 0.5rem;
+
 
 @mixin sidebar-section {
   display: flex;
@@ -17,13 +19,22 @@ $sidebar-item-top-bottom-margin: 0.5rem;
   flex-direction: column;
   background-color: $super-light-grey;
   height: 100vh;
+  overflow-x: hidden;
   overflow-y: scroll;
   padding: 1rem;
+  position: relative;
+  transition: all 300ms ease-in-out;
+  &-collapse {
+    max-width: $sidebar-collapsed-width;
+    overflow-y: hidden;
+  }
+
   &-header {
     display: flex;
     align-items: center;
     &-logo {
       max-width: $sidebar-icon-width;
+      margin-left: $sidebar-item-margin;
     }
     &-title {
       color: $dark-blue;
@@ -45,6 +56,7 @@ $sidebar-item-top-bottom-margin: 0.5rem;
       padding: 0;
       font-size: 1.4rem;
       border: none;
+      overflow-x: hidden;
       &-menu {
         &.show {
           display: contents;
@@ -65,8 +77,8 @@ $sidebar-item-top-bottom-margin: 0.5rem;
     &-item {
       width: 100%;
       padding: 0.5rem;
-      margin-top: $sidebar-item-top-bottom-margin;
-      margin-bottom: $sidebar-item-top-bottom-margin;
+      margin-top: $sidebar-item-margin;
+      margin-bottom: $sidebar-item-margin;
       border-radius: 0.5rem;
       &:hover {
         .sidebar-links-title {
@@ -89,6 +101,8 @@ $sidebar-item-top-bottom-margin: 0.5rem;
     &-title {
       margin-left: 0.5rem;
       color: $dark-blue;
+      white-space: nowrap;
+      max-width: 90%;
     }
     &-subtitle {
       margin-left: 0.5rem;
@@ -101,25 +115,38 @@ $sidebar-item-top-bottom-margin: 0.5rem;
     @include sidebar-section;
   }
   &-subtitle {
-    margin-top: $sidebar-item-top-bottom-margin;
-    margin-bottom: $sidebar-item-top-bottom-margin;
+    margin-top: $sidebar-item-margin;
+    margin-bottom: $sidebar-item-margin;
+    margin-left: $sidebar-item-margin;
     font-weight: 500;
   }
   &-side {
     @include sidebar-section;
   }
   &-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
+    position: sticky;
+    bottom: -1rem;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    margin-bottom: -1rem;
     display: flex;
     background-color: $light-grey;
-    width: $sidebar-width;
     justify-content: space-between;
     &-items {
+      margin-left: $sidebar-item-margin * 2;
+      &-collapse {
+        margin-left: -4rem;
+      }
     }
     &-expand {
       &-btn {
+        height: 5rem;
+        width: $sidebar-collapsed-width;
+        transition: all 300ms ease-in-out;
+        &-collapse {
+          // margin-left: 0;
+          transition: all 300ms ease-in-out;
+        }
       }
     }
   }

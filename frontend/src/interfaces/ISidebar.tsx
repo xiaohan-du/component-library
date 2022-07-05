@@ -6,7 +6,7 @@ interface ISidebar {
   mainLinks: {
     id: number,
     name: string,
-    url: string,
+    url?: string,
     icon: string,
     sublinks?: {
       id: number,
@@ -18,7 +18,7 @@ interface ISidebar {
   sideLinks: {
     id: number,
     name: string,
-    url: string,
+    url?: string,
     icon: string
   }[];
   footerItems: {
