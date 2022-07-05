@@ -24,7 +24,7 @@ function App() {
       },
       {
         id: 3,
-        name: 'YouTube',
+        name: 'Extra extra loooooooooooooong link',
         url: 'https://www.youtube.com/',
         icon: require('./static/icons/world-wide-web.png')
       },
@@ -48,8 +48,7 @@ function App() {
       },
       {
         id: 7,
-        name: 'YouTube',
-        url: 'https://www.youtube.com/',
+        name: 'Looooooooooooooooooooooooong link',
         icon: require('./static/icons/world-wide-web.png'),
         sublinks: [
           {
