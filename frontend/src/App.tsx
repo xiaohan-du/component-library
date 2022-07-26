@@ -1,6 +1,9 @@
 import './App.scss';
 import Sidebar from './components/sidebar/Sidebar';
 import ISidebar from './interfaces/ISidebar';
+import Card from './components/card/Card';
+import ICard from './interfaces/ICard';
+import AnimationEnum from './enums/AnimationEnum';
 
 function App() {
 
@@ -319,9 +322,20 @@ function App() {
     ]
   }
 
+  const cardDetails: ICard = {
+    id: 1,
+    animation: AnimationEnum.NONE,
+    img: {
+      path: require('./static/images/logo.png')
+    },
+    title: 'Flip Card',
+    content: 'Flip card content'
+  }
+
   return (
     <div className="App">
       <Sidebar sidebar={sidebarDetails} />
+      <Card card={cardDetails}/>
     </div>
   );
 }

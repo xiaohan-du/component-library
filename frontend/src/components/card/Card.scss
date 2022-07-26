@@ -1,0 +1,85 @@
+@import "../../main.scss";
+
+.card {
+    background-color: transparent;
+    width: 100%;
+    height: 220px;
+    perspective: 1000px;
+    margin: 0 auto;
+    box-shadow: none;
+    &-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    }
+    &:hover {
+        & .card-inner {
+            transform: rotateY(180deg);
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            border: none;
+        }
+    }
+    &-front {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        background-color: white;
+        color: black;
+    }
+    &-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        background-color: white;
+        transform: rotateY(180deg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &-title {
+        font-weight: bold;
+        font-size: $font-basic;
+    }
+    &-content {
+        font-size: $font-small;
+    }
+}
+
+@include to-tablet-portrait {
+    .card {
+        height: 260px;
+        &-title {
+            font-size: $font-small;
+        }
+        &-content {
+            font-size: $font-small;
+            line-height: 1.6rem;
+        }
+    }
+}
+
+@media screen and (max-width: 671px) {
+    .card {
+        height: 215px;
+        &-title {
+            font-size: $font-basic;
+        }
+        &-content {
+            line-height: 2rem;
+        }
+    }
+}
+
+@include to-phone {
+    .card {
+        height: 250px;
+    }
+}
